@@ -1,0 +1,56 @@
+{
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "css": [
+        "content.css"
+      ],
+      "js": [
+        "src/config/Config.js",
+        "src/services/ImageExtractor.js",
+        "src/ui/OverlayManager.js",
+        "src/ui/FloatingButtons.js",
+        "src/core/ChisaTLExtension.js",
+        "content.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "description": "Send images or translate manga in-place using Chisa Translate.",
+  "host_permissions": [
+    "<all_urls>",
+    "http://localhost:5039/*",
+    "http://127.0.0.1:5039/*"
+  ],
+  "icons": {
+    "128": "assets/icon128.png",
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png"
+  },
+  "manifest_version": 3,
+  "name": "Chisa Translate Extension Community Edition",
+  "permissions": [
+    "contextMenus",
+    "storage"
+  ],
+  "version": "1.1",
+  "browser_specific_settings": {
+  "gecko": {
+    "id": "chisa-translate-extension@chisatranslate.my.id",
+    "strict_min_version": "140.0",
+    "data_collection_permissions": {
+      "required": ["websiteContent"]
+    }
+  }
+  }
+}
+
